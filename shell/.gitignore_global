@@ -1,7 +1,4 @@
 *~
-.php_cs.cache
-webpack.ide-helper.js
-
 # Mac OS X hidden files
 .DS_Store
 .DS_Store?
@@ -24,7 +21,6 @@ Thumbs.db
 *.sublime-project
 
 # Node
-node_modules
 npm-debug.log
 yarn-error.log
 .phpunit-watcher-cache.php

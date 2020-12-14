@@ -10,10 +10,9 @@ composer global config http-basic.nova.laravel.com vyacheslav.razum@gmail.com 54
 
 # Install global Composer packages
 composer global require laravel/valet
-composer global require phpmd/phpmd:@stable
-composer global require friendsofphp/php-cs-fixer
 composer global require laravel/installer
-composer global require hirak/prestissimo
+composer global require beyondcode/expose
+composer global require laravel/vapor-cli
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install

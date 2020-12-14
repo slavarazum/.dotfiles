@@ -1,6 +1,5 @@
 # Taps
 tap 'homebrew/cask'
-tap 'homebrew/cask-eid'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
@@ -27,13 +26,12 @@ brew 'zsh-autosuggestions'
 
 # Development
 brew 'php'
-brew 'php@7.3'
+brew 'php@7.4'
 brew 'composer'
 brew 'mysql'
 brew 'nginx'
 brew 'node'
 brew 'redis'
-brew 'mailhog'
 brew 'yarn'
 
 # Apps
@@ -71,6 +69,7 @@ cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 cask 'qlstephen'
+cask 'betterzip'
 
 # Fonts
 cask 'font-lato'

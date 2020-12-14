@@ -1,4 +1,4 @@
-alias art="php artisan"
+alias a="php artisan"
 
 artisan() {
   if [ -f bin/artisan ]; then
@@ -10,3 +10,15 @@ artisan() {
 
 alias serve='artisan serve'
 alias t='artisan tinker'
+alias dusk='artisan dusk'
+alias dusks='dusk --stop-on-failure'
+alias routes='artisan route:list | grep '
+alias sail='vendor/bin/sail'
+
+duskf() {
+  if [ -f bin/artisan ]; then
+    php bin/artisan dusk --stop-on-failure --filter=$@
+  else
+    php artisan dusk --stop-on-failure --filter=$@
+  fi
+}
