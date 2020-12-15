@@ -1,12 +1,11 @@
 # Install PHP extensions with PECL
-# TODO: export configs to own files
 pecl install imagick
 pecl install redis
 pecl install xdebug
 
 # Config auth tokens
-composer global config github-oauth.github.com d751b3183b274825bcd44617b4d1209c9f800ea0
-composer global config http-basic.nova.laravel.com vyacheslav.razum@gmail.com 545b6J95KZjdVbdCU9qUAmeJv97VscqYnRDkriig
+composer global config github-oauth.github.com $GITHUB_TOKEN
+composer global config http-basic.nova.laravel.com $NOVA_EMAIL $NOVA_TOKEN
 
 # Install global Composer packages
 composer global require laravel/valet

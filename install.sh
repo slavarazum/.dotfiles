@@ -2,6 +2,12 @@
 
 echo "Awesome Mac setup running..."
 
+if [ -f .env ]; then
+source .env
+fi
+
+git config --global user.name $GIT_NAME
+git config --global user.email $GIT_EMAIL
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
@@ -19,11 +25,15 @@ brew bundle
 mysql -u root < create-valet-user.sql
 
 # Install PHP evnironment
+echo 'PHP environment installation'
+echo '-----------------'
 source php_setup.sh
 
 # Create a Sites directory
-# This is a default directory for macOS user accounts but doesn't comes pre-installed
 mkdir $HOME/Development
+mkdir $HOME/Development/code
+
+$HOME/.composer/vendor/bin/valet park $HOME/Development/code
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm $HOME/.zshrc
@@ -48,3 +58,7 @@ echo 'Install oh-my-zsh spaceship prompt'
 echo '-----------------'
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.dotfiles/oh-my-zsh-custom/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
+echo 'Setup MacOS defaults'
+echo '-----------------'
+source macos-defaults.sh
