@@ -35,33 +35,41 @@ brew 'redis'
 brew 'yarn'
 
 # Apps
-cask 'aerial'
 cask 'alfred'
 cask 'bartender'
-cask 'caffeine'
 cask 'discord'
 cask 'docker'
 cask 'firefox'
+cask 'homebrew/cask-versions/firefox-developer-edition'
 cask 'github'
-cask 'google-backup-and-sync'
 cask 'google-chrome'
 cask 'gpg-suite'
 cask 'insomnia'
 cask 'java'
-cask 'mysqlworkbench'
-cask 'phpstorm'
+cask 'nordvpn'
 cask 'skype'
+cask 'zoomus'
 cask 'slack'
-cask 'sublime-text'
-cask 'tableplus'
 cask 'telegram-desktop'
-cask 'tor-browser'
+cask 'cleanshot'
+cask 'deezer'
+cask 'deepl'
+cask 'figma'
+cask 'vlc'
+cask 'rocket'
+
+# Dev Tools
+cask 'hyper'
+cask 'phpstorm'
+cask 'visual-studio-code'
+cask 'tableplus'
+cask 'mysqlworkbench'
+cask 'tinerwell'
+#cask 'sublime-text'
 cask 'transmission'
 cask 'transmit'
-cask 'vagrant'
-cask 'virtualbox' # Might need to allow access in Security settings
-cask 'virtualbox-extension-pack'
-cask 'vlc'
+cask 'drawio'
+cask 'runjs'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -80,15 +88,17 @@ cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
+cask 'font-jetbrains-mono'
+cask 'font-jetbrains-mono-nerd-font'
 
 # Mac App Store
 mas '1Password', id: 1333542190
 mas 'Byword', id: 420212497
+mas 'Evernote', id: 406056744
 mas 'Giphy Capture', id: 668208984
 mas 'Keynote', id: 409183694
-mas 'Sip', id: 507257563
 mas 'Spark', id: 1176895641
+mas 'Pocket', id: 568494494
 mas 'The Unarchiver', id: 425424353
-mas 'Things', id: 904280696
+mas 'Todoist: To-Do List & Tasks', id: 585829637
 mas 'Tweetbot', id: 1384080005
-mas 'WhatsApp', id: 1147396723 
