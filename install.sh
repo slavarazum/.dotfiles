@@ -2,16 +2,21 @@
 
 echo "Awesome Mac setup running..."
 
+sudo -v
+
+# Hide "last login" line when starting a new terminal session
+touch $HOME/.hushlogin
+
 if [ -f .env ]; then
 source .env
 fi
 
-git config --global user.name $GIT_NAME
-git config --global user.email $GIT_EMAIL
+git config --global user.name "$GIT_NAME"
+git config --global user.email "$GIT_EMAIL"
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Update Homebrew recipes
@@ -34,6 +39,7 @@ mkdir $HOME/Development
 mkdir $HOME/Development/code
 
 $HOME/.composer/vendor/bin/valet park $HOME/Development/code
+$HOME/.composer/vendor/bin/valet trust
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm $HOME/.zshrc
