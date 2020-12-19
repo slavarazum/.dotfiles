@@ -5,7 +5,6 @@ function valet() {
     services=(
         mysql
         redis
-        mailhog
     )
 
     if [ "$1" = "start" ] || [ "$1" = "stop" ] || [ "$1" = "restart" ]; then
