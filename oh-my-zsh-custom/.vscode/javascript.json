@@ -26,6 +26,6 @@
 		"body": [
 			"() => $0"
 		],
-		"description": "Short bare arrow function",
+		"description": "Short bare arrow function"
 	}
 }
