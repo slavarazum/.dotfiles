@@ -1,0 +1,24 @@
+[user]
+	email = razum@qruto.to
+	name = Slava Razumm
+	name = Slava Razum
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJz3qPAvslhdazUEWWNpYOmmIMq4b9ZtNvyelylEmLAK
+[core]
+	excludesfile = /Users/razum/.global-gitignore
+	autocrlf = input
+	editor = code --wait
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true

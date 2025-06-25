@@ -15,6 +15,7 @@ brew 'gnupg2'
 brew 'grep'
 brew 'httpie'
 brew 'hub'
+brew 'wrk'
 brew 'htop'
 brew 'mackup'
 brew 'mas' # Mac App Store manager

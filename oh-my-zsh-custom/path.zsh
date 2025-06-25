@@ -11,8 +11,10 @@ export PATH="$HOME/.node/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+export PATH="/usr/local/sbin:$PATH"
+
 # Use project specific binaries before global ones
-export PATH="node_modules/.bin:vendor/bin:$PATH"
+#export PATH="node_modules/.bin:vendor/bin:$PATH"
 
 # Make sure coreutils are loaded before system commands
 # I've disabled this for now because I only use "ls" which is

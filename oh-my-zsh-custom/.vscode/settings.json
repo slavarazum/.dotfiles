@@ -1,0 +1,362 @@
+{
+    // Editor Settings
+    "editor.fontFamily": "Monaspace Neon Var, MonoLisa, monospace",
+    "editor.fontWeight": "440",
+    "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02'",
+    "editor.fontSize": 16,
+    "editor.lineHeight": 45,
+    "editor.cursorBlinking": "solid",
+    "editor.matchBrackets": "near",
+    "editor.occurrencesHighlight": "off",
+    "editor.selectionHighlight": true,
+    "editor.renderLineHighlight": "all",
+    "editor.overviewRulerBorder": false,
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.minimap.enabled": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always"
+    },
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.parameterHints.enabled": true,
+    "editor.inlineSuggest.enabled": true,
+    "editor.lightbulb.enabled": "off",
+    "editor.codeLens": true,
+    "editor.guides.indentation": false,
+    "editor.rulers": [],
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+    "editor.accessibilitySupport": "off",
+    // Theme and Appearance
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.preferredLightColorTheme": "GitHub Light",
+    "workbench.preferredDarkColorTheme": "GitHub Dark",
+    "window.autoDetectColorScheme": true,
+    "workbench.fontAliasing": "antialiased",
+    "workbench.colorCustomizations": {
+        "[GitHub Dark]": {
+            "titleBar.border": "default",
+            "titleBar.activeBackground": "#1f1f21",
+            "titleBar.inactiveBackground": "#2d2d30",
+            "commandCenter.background": "#2f2f34",
+            "commandCenter.border": "#3a3a40",
+            "commandCenter.foreground": "#d4d4d8",
+            "tab.inactiveBackground": "#1f1f21",
+            "tab.activeBackground": "#27272a",
+            "breadcrumb.background": "#27272a",
+            "tab.activeBorderTop": "#34343a",
+            "tab.activeBorder": "#27272a",
+            "editorGroupHeader.tabsBorder": "#34343a",
+            "tab.border": "#1b1b1f",
+            "editorGroupHeader.tabsBackground": "#1f1f21",
+            "tab.activeForeground": "#d4d4d8",
+            "gitDecoration.modifiedResourceForeground": "#a1a1aa",
+            "gitDecoration.stageModifiedResourceForeground": "#a1a1aa",
+            "gitDecoration.untrackedResourceForeground": "#a1a1aa",
+            "gitDecoration.addedResourceForeground": "#a1a1aa",
+            "gitDecoration.renamedResourceForeground": "#a1a1aa",
+            "gitDecoration.conflictingResourceForeground": "#a1a1aa",
+            "gitDecoration.submoduleResourceForeground": "#a1a1aa",
+            "gitDecoration.deletedResourceForeground": "#a1a1aa",
+            "gitDecoration.ignoredResourceForeground": "#a1a1aa",
+            "gitDecoration.stageDeletedResourceForeground": "#a1a1aa",
+            "panel.background": "#27272a",
+            "panel.border": "#3f3f46",
+            "sideBarSectionHeader.border": "#27272a",
+            "sideBar.background": "#27272a",
+            "sideBar.border": "#34343a",
+            "sideBarSectionHeader.background": "#2f2f34",
+            "editor.background": "#1f1f21",
+            "editorStickyScroll.background": "#27272a",
+            "editorStickyScroll.shadow": "#1b1b1e",
+            "editor.lineHighlightBackground": "#27272a",
+            "editorCursor.foreground": "#ca8a04",
+            "editorLineNumber.foreground": "#36363a",
+            "terminalCursor.foreground": "#ca8a04",
+            "peekViewTitle.background": "#1f2937",
+            "button.background": "#422006",
+            "button.hoverBackground": "#542b08",
+            "button.foreground": "#eab308",
+            "button.border": "#713f12",
+            "button.secondaryBackground": "#000000",
+            "button.secondaryForeground": "#a16207",
+            "button.secondaryHoverBackground": "#171717",
+            "quickInput.background": "#27272a",
+            "editorWidget.background": "#27272a",
+            "editorWidget.resizeBorder": "#3f3f46",
+            "input.background": "#35353b",
+            "input.border": "#414148",
+            "input.placeholderForeground": "#a1a1aa",
+            "focusBorder": "#ca8a04",
+            "statusBar.background": "#09090b",
+            "statusBar.border": "#2b2b34"
+        },
+        "[GitHub Light]": {
+            "titleBar.border": "default",
+            "titleBar.activeBackground": "#f4f4f5",
+            "titleBar.inactiveBackground": "#a1a1aa",
+            "commandCenter.background": "#fafafa",
+            "commandCenter.border": "#e4e4e7",
+            "commandCenter.foreground": "#3f3f46",
+            "tab.inactiveBackground": "#f4f4f5",
+            "tab.activeBackground": "#fcfcfc",
+            "editorGroupHeader.tabsBackground": "#f4f4f5",
+            "breadcrumb.background": "#fcfcfc",
+            "tab.activeBorderTop": "#ffffff",
+            "tab.activeBorder": "#fcfcfc",
+            "tab.border": "#e4e4e7",
+            "editorGroupHeader.tabsBorder": "#ffffff",
+            "panel.background": "#fafafa",
+            "sideBar.background": "#fafafa",
+            "sideBarSectionHeader.background": "#fafafa",
+            "editor.background": "#f4f4f5",
+            "editorLineNumber.foreground": "#d4d4d8",
+            "editorLineNumber.activeForeground": "#a1a1aa",
+            "editorStickyScroll.background": "#fcfcfc",
+            "editorStickyScroll.shadow": "#e4e4e7",
+            "editor.lineHighlightBackground": "#fcfcfc",
+            "editorCursor.foreground": "#facc15",
+            "editorGroup.border": "#f4f4f5",
+            "quickInput.background": "#ffffff",
+            "editorWidget.background": "#fcfcfc",
+            "editorWidget.resizeBorder": "#facc15",
+            "statusBar.background": "#3f3f46",
+            "statusBar.border": "#76767f"
+        },
+        "editorCursor.background": "#ffffff",
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
+    },
+    // File and Folder Settings
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "search.exclude": {
+        ".phpunit.result.cache": true,
+        "**/_ide_helper.php": true,
+        "**/.vitepress/cache": true,
+        "**/bootstrap/ssr": true,
+        "**/composer.lock": true,
+        "**/dist": true,
+        "**/node_modules": true,
+        "**/package-lock.json": true,
+        "**/public/{[^i],?[^n]}*": true,
+        "**/public/build": true,
+        "**/public/**/assets": true,
+        "**/vendor": false,
+        "storage": true
+    },
+    "search.useIgnoreFiles": false,
+    // Extension Settings
+    "cSpell.language": "en,ru",
+    "cSpell.userWords": [
+        "analyse",
+        "atlascode",
+        "autoload",
+        "commitlint",
+        "composables",
+        "dont",
+        "easymotion",
+        "fontsource",
+        "headlessui",
+        "heroicons",
+        "histoire",
+        "iife",
+        "inertiajs",
+        "Jetstream",
+        "keylayout",
+        "larastan",
+        "laravel",
+        "liveshare",
+        "livewire",
+        "Monaspace",
+        "nunomaduro",
+        "nuxt",
+        "Parens",
+        "pestphp",
+        "phpstan",
+        "phpunit",
+        "popovertarget",
+        "Qruto",
+        "Razum",
+        "Slava",
+        "spatie",
+        "tailwindcss",
+        "testbench",
+        "vitepress",
+        "vueuse",
+        "webui"
+    ],
+    "tailwindCSS.emmetCompletions": true,
+    "tailwind-fold.foldLengthThreshold": 32,
+    "tailwind-fold.autoFold": false,
+    "todo-tree.highlights.defaultHighlight": {
+        "background": "#FBBF24"
+    },
+    "todo-tree.highlights.customHighlight": {
+        "HERE": {
+            "icon": "goal",
+            "background": "#4a044e"
+        },
+        "WIP": {
+            "icon": "goal",
+            "background": "#6b21a8"
+        },
+        "TODO": {
+            "background": "#18181b"
+        },
+        "BUG": {
+            "icon": "bug"
+        },
+        "HACK": {
+            "icon": "tools"
+        },
+        "FIXME": {
+            "icon": "flame"
+        },
+        "XXX": {
+            "icon": "x"
+        },
+        "[ ]": {
+            "icon": "issue-draft"
+        },
+        "[x]": {
+            "icon": "issue-closed"
+        }
+    },
+    "todo-tree.highlights.backgroundColourScheme": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "indigo",
+        "violet"
+    ],
+    // Vim
+    "vim.easymotion": true,
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+    "vim.foldfix": true,
+    // GitHub
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false,
+        "yaml": false
+    },
+    "github.copilot.chat.generateTests.codeLens": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.chat.agent.thinkingTool": true,
+    "chat.agent.enabled": true,
+    // Git and Version Control
+    "git.allowForcePush": true,
+    "git.enableSmartCommit": true,
+    "git.replaceTagsWhenPull": true,
+    "git.ignoreRebaseWarning": true,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.mode.statusBar.enabled": false,
+    "git.blame.editorDecoration.enabled": false,
+    "vitest.configSearchPatternExclude": "{**/node_modules/**,**/server/vendor/**,**/.*/**,**/*.d.ts}",
+    // Terminal Settings
+    "terminal.integrated.fontFamily": "Monaspace Krypton Var, MonoLisa, monospace",
+    "terminal.integrated.fontSize": 15,
+    "terminal.external.osxExec": "Hyper.app",
+    "terminal.integrated.env.osx": {
+        "CW_NEW_SESSION": "1",
+        "Q_NEW_SESSION": "1"
+    },
+    // Workbench and UI
+    "workbench.editor.centeredLayoutAutoResize": false,
+    "workbench.editor.centeredLayoutFixedWidth": true,
+    "workbench.editor.decorations.colors": false,
+    "workbench.editor.decorations.badges": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.alwaysShowEditorActions": false,
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "workbench.view.alwaysShowHeaderActions": false,
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.location": "hidden",
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 20,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.navigationControl.enabled": true,
+    "zenMode.fullScreen": true,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideActivityBar": true,
+    // window
+    "window.title": "${rootName} ${dirty}",
+    "window.restoreFullscreen": false,
+    "window.newWindowDimensions": "inherit",
+    "window.closeWhenEmpty": true,
+    "window.nativeFullScreen": true,
+    "window.commandCenter": false,
+    "chat.commandCenter.enabled": false,
+    // language-specific settings
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[yml]": {
+        "editor.defaultFormatter": null,
+        "editor.formatOnSave": false
+    },
+    "emmet.includeLanguages": {
+        "blade": "html",
+        "typescript": "html"
+    },
+    "css.enabledLanguages": [
+        "html",
+        "vue"
+    ],
+    // php
+    "php.suggest.basic": false,
+    "php.validate.enable": false,
+    "php.validate.executablePath": "/Users/razum/Library/Application Support/Herd/bin/php",
+    "php.codeLens.enabled": false,
+    "php.inlayHints.parameters.enabled": false,
+    "php.inlayHints.types.return": false,
+    "php.inlayHints.types.suppressVariableFromLiteral": false,
+    "typescript.tsserver.log": "off",
+    "yaml.format.singleQuote": true,
+    "yaml.format.enable": true,
+    // refactor
+    "auto-close-tag.disableOnLanguage": [
+        "typescript"
+    ],
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "vue.autoInsert.dotValue": true,
+    // miscellaneous
+    "diffEditor.renderSideBySide": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "scm.diffDecorations": "overview",
+    "liveshare.showInStatusBar": "whileCollaborating",
+    "task.allowAutomaticTasks": "on",
+    "nuxtr.defaultPackageManager": "NPM"
+}
