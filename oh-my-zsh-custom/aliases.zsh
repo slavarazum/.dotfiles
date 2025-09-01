@@ -13,32 +13,13 @@ alias psgrep="psgrep -i"
 
 # Global aliases
 
-if $(is-supported "alias -g"); then
-  alias -g G="| grep -i"
-  alias -g H="| head"
-  alias -g T="| tail"
-  alias -g L="| less"
-fi
-
 # List declared aliases, functions, paths
 
 alias aliases="alias | sed 's/=.*//'"
 alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 alias paths='echo -e ${PATH//:/\\n}'
 
-# Directory listing/traversal
-
-LS_COLORIZED=$(is-supported "ls --color" --color -G)
-LS_TIMESTYLEISO=$(is-supported "ls --time-style=long-iso" --time-style=long-iso)
-LS_GROUPDIRSFIRST=$(is-supported "ls --group-directories-first" --group-directories-first)
-
-alias l="ls -lahA $LS_COLORIZED $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
-alias ll="ls -lA $LS_COLORIZED"
-alias lt="ls -lhAtr $LS_COLORIZED $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
-alias ld="ls -ld $LS_COLORIZED */"
-alias lp="stat -c '%a %n' *"
-
-unset LS_COLORIZED LS_TIMESTYLEISO LS_GROUPDIRSFIRST
+alias la='ls -la'
 
 alias ..="cd .."
 alias ...="cd ../.."
