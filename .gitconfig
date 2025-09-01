@@ -1,10 +1,9 @@
 [user]
 	email = razum@qruto.to
-	name = Slava Razumm
 	name = Slava Razum
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJz3qPAvslhdazUEWWNpYOmmIMq4b9ZtNvyelylEmLAK
 [core]
-	excludesfile = /Users/razum/.global-gitignore
+	excludesfile = ~/Development/.dotfiles/.global-gitignore
 	autocrlf = input
 	editor = code --wait
 [init]

@@ -1,6 +1,5 @@
 # Shortcuts
 
-alias reload="source ~/.bash_profile"
 alias _="sudo"
 alias g="git"
 alias rr="rm -rf"
@@ -65,7 +64,6 @@ alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([
 alias hosts="sudo $EDITOR /etc/hosts"
 alias quit="exit"
 alias week="date +%V"
-alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
 alias grip="grip --browser --pass=$GITHUB_TOKEN"
 alias fkill="ps -e | fzf | awk '{print $1}' | xargs kill"
 alias formatmd="remark --use remark-preset-webpro"
