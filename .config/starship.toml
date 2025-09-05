@@ -1,0 +1,64 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$directory\
+$vcsh\
+${custom.git_branch_dirty}${custom.git_branch_clean} \
+$git_commit\
+$git_state\
+$git_metrics\
+$hg_branch\
+$package\
+$nix_shell\
+$spack\
+$memory_usage\
+$nats\
+$direnv\
+$env_var\
+$mise\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$shell\
+$character"""
+
+[git_branch]
+disabled = true
+
+[character]
+success_symbol = "[❯](gray)"
+
+[custom.git_branch_dirty]
+description = "Show branch name in bold italic purple when repo is dirty"
+command = '''
+branch=$(git symbolic-ref --short -q HEAD 2>/dev/null \
+	|| git describe --tags --exact-match 2>/dev/null \
+	|| git rev-parse --short HEAD 2>/dev/null) || exit 0
+printf "%s" "$branch"
+'''
+when = 'git rev-parse --is-inside-work-tree >/dev/null 2>&1 && test -n "$(git -c status.showUntrackedFiles=all status --porcelain --ignore-submodules=dirty 2>/dev/null)"'
+format = "on [$output](italic purple)"
+
+[custom.git_branch_clean]
+description = "Show branch name in plain purple when repo is clean"
+command = '''
+branch=$(git symbolic-ref --short -q HEAD 2>/dev/null \
+	|| git describe --tags --exact-match 2>/dev/null \
+	|| git rev-parse --short HEAD 2>/dev/null) || exit 0
+printf "%s" "$branch"
+'''
+when = 'git rev-parse --is-inside-work-tree >/dev/null 2>&1 && test -z "$(git -c status.showUntrackedFiles=all status --porcelain --ignore-submodules=dirty 2>/dev/null)"'
+format = "on [$output](purple)"

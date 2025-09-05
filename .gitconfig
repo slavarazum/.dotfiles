@@ -3,7 +3,7 @@
 	name = Slava Razum
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJz3qPAvslhdazUEWWNpYOmmIMq4b9ZtNvyelylEmLAK
 [core]
-	excludesfile = ~/Development/.dotfiles/.global-gitignore
+	excludesfile = ~/Development/.dotfiles/.gitignore-global
 	autocrlf = input
 	editor = code --wait
 [init]
