@@ -1,0 +1,15 @@
+{
+  "name": "dotfiles",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/install.ts",
+    "sync:dry": "node scripts/install.ts --dry-run",
+    "macos": "node scripts/macos.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}

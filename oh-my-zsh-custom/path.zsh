@@ -1,15 +1,21 @@
-# Load custom binaries
-export PATH="$HOME/.oh-my-zsh/custom/bin:$PATH"
+# Custom binaries from the dotfiles repo
+export PATH="$DOTFILES/oh-my-zsh-custom/bin:$PATH"
 
-# Load Node global installed binaries
-export PATH="$HOME/.node/bin:$PATH"
-
-export PATH="/usr/local/sbin:$PATH"
-
-# Use project specific binaries before global ones
-#export PATH="node_modules/.bin:vendor/bin:$PATH"
-
-# Make sure coreutils are loaded before system commands
-# I've disabled this for now because I only use "ls" which is
-# referenced in my aliases.zsh file directly.
-#export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+# Auto-add ./node_modules/.bin to PATH when present, so locally
+# installed CLI tools (vitest, eslint, etc.) run without pnpm exec.
+autoload -Uz add-zsh-hook
+_local_node_bin=""
+_update_local_node_bin() {
+  if [[ -n "$_local_node_bin" ]]; then
+    PATH="${PATH//:$_local_node_bin/}"
+    PATH="${PATH//$_local_node_bin:/}"
+  fi
+  if [[ -d "$PWD/node_modules/.bin" ]]; then
+    _local_node_bin="$PWD/node_modules/.bin"
+    export PATH="$_local_node_bin:$PATH"
+  else
+    _local_node_bin=""
+  fi
+}
+add-zsh-hook chpwd _update_local_node_bin
+_update_local_node_bin

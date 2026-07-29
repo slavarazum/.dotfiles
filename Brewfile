@@ -1,105 +1,53 @@
-# Taps
-tap 'homebrew/cask'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-tap 'homebrew/bundle'
+# Take over apps that were installed manually instead of failing
+cask_args adopt: true
 
-# Binaries
-brew 'ack'
-brew 'bash' # Latest Bash version
-brew 'bat' # "cat" on steroids
-brew 'coreutils' # Those that come with macOS are outdated
-brew 'doctl'
+# Core
 brew 'git'
-brew 'gnupg2'
-brew 'grep'
-brew 'httpie'
-brew 'hub'
-brew 'wrk'
-brew 'htop'
-brew 'mackup'
-brew 'mas' # Mac App Store manager
-brew 'ncdu'
-brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
-brew 'trash' # Manage the Trash bin
-brew 'tree' # List directories in a tree structure
-brew 'zsh-autosuggestions'
-
-# Development
-brew 'php'
-brew 'php@7.4'
-brew 'composer'
-brew 'mysql'
-brew 'nginx'
+brew 'git-lfs'
+brew 'gh'
 brew 'node'
-brew 'redis'
-brew 'yarn'
+brew 'pnpm'
+
+# Shell
+brew 'starship'
+brew 'zsh-autosuggestions'
+brew 'zsh-syntax-highlighting'
+
+# CLI toolbox
+brew 'bat'      # cat with syntax highlighting
+brew 'eza'      # modern ls
+brew 'fd'       # modern find
+brew 'fzf'      # fuzzy finder
+brew 'htop'     # process viewer
+brew 'jq'       # JSON processor
+brew 'ncdu'     # interactive disk usage
+brew 'oha'      # HTTP load testing
+brew 'ripgrep'  # modern grep
+brew 'tree'     # directory trees
+brew 'xh'       # friendly HTTP client (httpie-compatible)
+brew 'zoxide'   # smarter cd
+
+# Dev tools
+cask '1password-cli'
+cask 'claude-code'
+cask 'cursor'
+cask 'ghostty'
+cask 'ngrok'
+cask 'visual-studio-code'
 
 # Apps
-cask 'alfred'
-cask 'bartender'
-cask 'discord'
-cask 'docker'
-cask 'firefox'
-cask 'homebrew/cask-versions/firefox-developer-edition'
-cask 'github'
+cask '1password'
+cask 'claude'
+cask 'cleanshot'
+cask 'figma'
 cask 'google-chrome'
-cask 'gpg-suite'
-cask 'insomnia'
-cask 'java'
-cask 'nordvpn'
-cask 'skype'
-cask 'zoomus'
+cask 'linear'
+cask 'obsidian'
+cask 'protonvpn'
+cask 'raycast'
 cask 'slack'
 cask 'telegram'
-cask 'cleanshot'
-cask 'deezer'
-cask 'deepl'
-cask 'figma'
-cask 'vlc'
-cask 'rocket'
-
-# Dev Tools
-cask 'hyper'
-cask 'phpstorm'
-cask 'visual-studio-code'
-cask 'tableplus'
-cask 'mysqlworkbench'
-cask 'tinerwell'
-#cask 'sublime-text'
-cask 'transmission'
-cask 'transmit'
-cask 'drawio'
-cask 'runjs'
-
-# Quicklook
-cask 'qlcolorcode'
-cask 'qlmarkdown'
-cask 'quicklook-json'
-cask 'quicklook-csv'
-cask 'qlstephen'
-cask 'betterzip'
 
 # Fonts
-cask 'font-lato'
-cask 'font-open-sans'
-cask 'font-roboto'
-cask 'font-roboto-condensed'
-cask 'font-source-code-pro-for-powerline'
-cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
-cask 'font-jetbrains-mono'
-cask 'font-jetbrains-mono-nerd-font'
-
-# Mac App Store
-mas '1Password', id: 1333542190
-mas 'Byword', id: 420212497
-mas 'Evernote', id: 406056744
-mas 'Giphy Capture', id: 668208984
-mas 'Keynote', id: 409183694
-mas 'Spark', id: 1176895641
-mas 'Pocket', id: 568494494
-mas 'The Unarchiver', id: 425424353
-mas 'Todoist: To-Do List & Tasks', id: 585829637
-mas 'Tweetbot', id: 1384080005
+cask 'font-monaspace'            # GitHub Monaspace — Neon/Argon/Xenon/Radon/Krypton
+cask 'font-monaspice-nerd-font'  # Nerd Font patched Monaspace (glyphs for starship)

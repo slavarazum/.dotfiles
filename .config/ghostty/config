@@ -1,0 +1,26 @@
+# Ghostty config — synced from ~/Development/.dotfiles
+# Docs: https://ghostty.org/docs/config
+# Reload with cmd+shift+, (some options need a restart)
+
+font-family = Monaspace Krypton Var
+font-size = 16
+
+theme = light:Raycast Light,dark:Raycast Dark
+
+cursor-style = block
+cursor-color = #ff5208
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+macos-titlebar-style = tabs
+macos-icon = glass
+macos-titlebar-proxy-icon = hidden
+
+window-padding-x = 15
+window-width = 90
+window-height = 30
+window-position-x = 400
+window-position-y = 250
+
+# Insert newline without submitting (Claude Code, REPLs)
+keybind = shift+enter=text:\x1b\r

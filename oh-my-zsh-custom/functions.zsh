@@ -1,5 +1,64 @@
 #!/usr/bin/env bash
 
+# List and optionally remove node_modules recursively
+nmr() {
+    emulate -L zsh
+    setopt pipefail nullglob
+
+    # Find node_modules directories (pruned for speed)
+    local -a dirs
+    IFS=$'\n' dirs=($(command find . -type d -name node_modules -prune -print 2>/dev/null))
+
+    if (( ${#dirs[@]} == 0 )); then
+        print -- "No node_modules directories found under $(pwd)"
+        return 0
+    fi
+
+    # Show list
+    print -- "The following node_modules directories would be removed:"
+    local i=1
+    for d in "${dirs[@]}"; do
+        print -- "  $i) $d"
+        ((i++))
+    done
+
+    # Optional: show total size (can take some time on huge trees)
+    if command -v du >/dev/null 2>&1; then
+        print -- ""
+        print -- "Computing total size (this may take a moment)..."
+        # BSD/macOS du: -h; GNU du: -h works too
+        command du -ch -- "${dirs[@]}" 2>/dev/null | tail -n 1 | sed 's/total$/total size/'
+    fi
+
+    # Ask for confirmation
+    print -n -- "Proceed to delete these ${#dirs[@]} directorie(s)? [y/N] "
+    local reply
+    read -r reply
+    case "$reply" in
+        y|Y|yes|YES)
+            print -- "Deleting..."
+            # Use rm -rf safely on each path
+            local ok=1
+            for d in "${dirs[@]}"; do
+                if [[ -d "$d" ]]; then
+                    command rm -rf -- "$d" || ok=0
+                fi
+            done
+            if (( ok )); then
+                print -- "Done."
+                return 0
+            else
+                print -- "Some deletions failed."
+                return 1
+            fi
+            ;;
+        *)
+            print -- "Aborted. Nothing was deleted."
+            return 0
+            ;;
+    esac
+}
+
 # Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$_";

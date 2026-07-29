@@ -15,9 +15,23 @@
 	required = true
 [pull]
 	rebase = true
+[fetch]
+	prune = true
+[rebase]
+	autostash = true
+[merge]
+	conflictstyle = zdiff3
+[rerere]
+	enabled = true
+[branch]
+	sort = -committerdate
 [gpg]
 	format = ssh
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[push]
+	autoSetupRemote = true

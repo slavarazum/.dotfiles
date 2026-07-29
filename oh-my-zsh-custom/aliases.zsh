@@ -3,15 +3,10 @@
 alias _="sudo"
 alias g="git"
 alias rr="rm -rf"
-alias mux="tmuxinator"
 
 # Default options
 
 alias rsync="rsync -vh"
-alias json="json -c"
-alias psgrep="psgrep -i"
-
-# Global aliases
 
 # List declared aliases, functions, paths
 
@@ -19,7 +14,15 @@ alias aliases="alias | sed 's/=.*//'"
 alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 alias paths='echo -e ${PATH//:/\\n}'
 
-alias la='ls -la'
+# Listing (eza when available)
+
+if command -v eza > /dev/null; then
+	alias ls="eza"
+	alias la="eza -la --git"
+	alias lt="eza --tree --level=2"
+else
+	alias la="ls -la"
+fi
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -28,12 +31,11 @@ alias .....="cd ../../../.."
 alias -- -="cd -"                  # Go to previous dir with -
 alias cd.='cd $(readlink -f .)'    # Go to real dir (i.e. if current dir is linked)
 
-# p/npm
+# pnpm
 
-alias b="bun"
 alias p="pnpm"
-alias ncu="npm-check-updates --interactive"
-alias ncuw="npm-check-updates --interactive --root --workspaces"
+alias ncu="pnpm dlx npm-check-updates --interactive"
+alias ncuw="pnpm dlx npm-check-updates --interactive --root --workspaces"
 
 # Network
 
@@ -45,6 +47,4 @@ alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([
 alias hosts="sudo $EDITOR /etc/hosts"
 alias quit="exit"
 alias week="date +%V"
-alias grip="grip --browser --pass=$GITHUB_TOKEN"
 alias fkill="ps -e | fzf | awk '{print $1}' | xargs kill"
-alias formatmd="remark --use remark-preset-webpro"
