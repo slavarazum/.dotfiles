@@ -37,6 +37,37 @@ pnpm macos       # or: node scripts/macos.ts [--dry-run]
 
 Prompts for the computer name; some changes need a logout to apply.
 
+## Custom commands
+
+Small utilities written in TypeScript and run straight from zsh — no build step, no `tsx`:
+
+```sh
+hello Slava --loud          # smoke test: args, flags, exit codes
+ports                       # what's listening on TCP — ports 3000, ports node
+curl -s ipinfo.io | jsonpp  # pretty-print JSON from a pipe or a file
+```
+
+To add one, create the file — that's the whole procedure:
+
+```sh
+$EDITOR scripts/bin/mycmd.ts   # then: mycmd
+```
+
+Every `scripts/bin/*.ts` becomes a command of the same name. No symlink, no `chmod`, no `PATH` entry:
+[`oh-my-zsh-custom/commands.zsh`](oh-my-zsh-custom/commands.zsh) defines a zsh function per script at
+startup, and falls back to a `command_not_found_handler` so a script written in an already-open shell
+works immediately, without `reload`.
+
+(Why not just drop executables on `PATH`? Node strips types only from files ending in `.ts`, so an
+extensionless executable can't be TypeScript — even with `--experimental-strip-types`. Doing the name
+mapping in zsh keeps both the clean command name and the single source file.)
+
+Shared helpers (`step`, `ok`, `run`, `probe`) live in [`scripts/lib/utils.ts`](scripts/lib/utils.ts);
+`pnpm typecheck` covers everything under `scripts/`.
+
+Two constraints from native type stripping: types must be erasable (no `enum`, no `namespace`, no
+constructor parameter properties) and local imports need the `.ts` extension.
+
 ## What's inside
 
 | Path | Purpose |
@@ -44,6 +75,7 @@ Prompts for the computer name; some changes need a logout to apply.
 | `bootstrap.sh` | Prerequisites only (Xcode CLT, Homebrew, Node, clone) — the `curl` target |
 | `scripts/install.ts` | Main installer: brew bundle, oh-my-zsh, symlinks |
 | `scripts/macos.ts` | Curated macOS `defaults`, machine name prompt |
+| `scripts/bin/` | TypeScript commands — each file becomes a shell command of the same name |
 | `Brewfile` | CLI tools, apps, fonts — optional extras commented at the bottom |
 | `.zshrc` | oh-my-zsh + starship, pnpm, zoxide, fzf, autosuggestions |
 | `oh-my-zsh-custom/` | Aliases, functions, PATH, SSH-mode switcher (`ZSH_CUSTOM`) |
