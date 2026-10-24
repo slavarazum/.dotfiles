@@ -48,3 +48,6 @@ alias hosts="sudo $EDITOR /etc/hosts"
 alias quit="exit"
 alias week="date +%V"
 alias fkill="ps -e | fzf | awk '{print $1}' | xargs kill"
+
+alias portless-lan='portless proxy stop; portless proxy start --lan'
+alias portless-local='portless proxy stop; PORTLESS_LAN=0 portless proxy start'

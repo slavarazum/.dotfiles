@@ -7,6 +7,9 @@ font-size = 16
 
 theme = light:Raycast Light,dark:Raycast Dark
 
+background-opacity = 0.85
+background-blur-radius = 90
+
 cursor-style = block
 cursor-color = #ff5208
 cursor-style-blink = false
